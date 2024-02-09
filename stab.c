@@ -156,8 +156,8 @@ STAB *stab;
 	break;
     case '!':
 	str_numset(stab->stab_val, (double)errno);
-	str_set(stab->stab_val,
-	  errno < 0 || errno > sys_nerr ? "(unknown)" : sys_errlist[errno]);
+	/* Get a string describing the error number. */
+	str_set(stab->stab_val, strerror(errno));
 	stab->stab_val->str_nok = 1;	/* what a wonderful hack! */
 	break;
     case '<':
