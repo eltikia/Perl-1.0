@@ -18,11 +18,6 @@
 #define VOIDUSED 1
 #include "../config.h"
 
-#ifndef BCOPY
-#   define bcopy(s1,s2,l) memcpy(s2,s1,l);
-#   define bzero(s,l) memset(s,0,l);
-#endif
-
 #include "handy.h"
 #define Nullop 0
 
@@ -174,7 +169,7 @@ char *opname[] = {
 extern char *opname[];
 #endif
 
-union {
+EXT union {
     int ival;
     char *cval;
 } ops[50000];		/* hope they have 200k to spare */
@@ -258,8 +253,11 @@ EXT char fswitch INIT(0);
 EXT int saw_FS INIT(0);
 EXT int maxfld INIT(0);
 EXT int arymax INIT(0);
-char *nameary[100];
+EXT char *nameary[100];
 
 EXT STR *opens;
 
 EXT HASH *symtab;
+
+STR *walk(int, int, int, int *);
+
