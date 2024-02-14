@@ -724,7 +724,6 @@ STR ***retary;
     register STR **sarg;
     int max = 9;
     register int i;
-    STR *str;
 
     ary = myarray;
     if (!ary)
