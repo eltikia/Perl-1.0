@@ -50,7 +50,6 @@ register CMD *cmd;
     register int cmdflags;
     register bool match;
     register char *go_to = goto_targ;
-    ARG *arg;
     FILE *fp;
 
     retstr = &str_no;
