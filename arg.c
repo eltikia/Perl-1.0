@@ -593,7 +593,6 @@ do_tell(stab)
 STAB *stab;
 {
     register STIO *stio;
-    int ch;
 
     if (!stab)
 	return -1L;
