@@ -111,8 +111,8 @@ register ARG *arg;
 	if (debug & 8)
 	    deb("2.SPAT /%s/\n",t);
 #endif
-	if (d = compile(&spat->spat_compex,t,TRUE,
-	  spat->spat_flags & SPAT_FOLD )) {
+	if ((d = compile(&spat->spat_compex,t,TRUE,
+	  spat->spat_flags & SPAT_FOLD ))) {
 	    fatal("/%s/: %s", t, d);
 	    return FALSE;
 	}
