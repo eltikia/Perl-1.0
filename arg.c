@@ -182,8 +182,8 @@ register ARG *arg;
 	char *d;
 
 	m = str_get(eval(spat->spat_runtime,Null(STR***)));
-	if (d = compile(&spat->spat_compex,m,TRUE,
-	  spat->spat_flags & SPAT_FOLD )) {
+	if ((d = compile(&spat->spat_compex,m,TRUE,
+	  spat->spat_flags & SPAT_FOLD ))) {
 	    fatal("/%s/: %s", m, d);
 	    return 0;
 	}
