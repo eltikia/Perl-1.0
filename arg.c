@@ -204,7 +204,7 @@ register ARG *arg;
 	  strnNE(spat->spat_first->str_ptr, s, spat->spat_flen) )
 	    return 0;
     }
-    if (m = execute(&spat->spat_compex, s, TRUE, 1)) {
+    if ((m = execute(&spat->spat_compex, s, TRUE, 1))) {
 	int iters = 0;
 
 	dstr = str_new(str_len(str));
