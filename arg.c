@@ -111,8 +111,8 @@ register ARG *arg;
 	if (debug & 8)
 	    deb("2.SPAT /%s/\n",t);
 #endif
-	if (d = compile(&spat->spat_compex,t,TRUE,
-	  spat->spat_flags & SPAT_FOLD )) {
+	if ((d = compile(&spat->spat_compex,t,TRUE,
+	  spat->spat_flags & SPAT_FOLD ))) {
 	    fatal("/%s/: %s", t, d);
 	    return FALSE;
 	}
@@ -182,8 +182,8 @@ register ARG *arg;
 	char *d;
 
 	m = str_get(eval(spat->spat_runtime,Null(STR***)));
-	if (d = compile(&spat->spat_compex,m,TRUE,
-	  spat->spat_flags & SPAT_FOLD )) {
+	if ((d = compile(&spat->spat_compex,m,TRUE,
+	  spat->spat_flags & SPAT_FOLD ))) {
 	    fatal("/%s/: %s", m, d);
 	    return 0;
 	}
@@ -593,7 +593,6 @@ do_tell(stab)
 STAB *stab;
 {
     register STIO *stio;
-    int ch;
 
     if (!stab)
 	return -1L;
