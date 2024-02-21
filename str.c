@@ -180,6 +180,7 @@ register char *ptr;
     str->str_pok = 1;		/* validate pointer */
 }
 
+void
 str_ncat(str,ptr,len)
 register STR *str;
 register char *ptr;

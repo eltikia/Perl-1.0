@@ -34,4 +34,5 @@ STR *str_static();
 STR *str_make();
 STR *str_nmake();
 int str_len(register STR *);
+void str_ncat(register STR *, register char *, register int);
 
