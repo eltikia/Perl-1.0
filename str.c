@@ -196,6 +196,7 @@ register int len;
     str->str_pok = 1;		/* validate pointer */
 }
 
+void
 str_scat(dstr,sstr)
 STR *dstr;
 register STR *sstr;
