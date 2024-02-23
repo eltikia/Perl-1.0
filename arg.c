@@ -221,7 +221,7 @@ register ARG *arg;
 	    str_scat(dstr,eval(spat->spat_repl,Null(STR***)));
 	    if (spat->spat_flags & SPAT_USE_ONCE)
 		break;
-	} while (m = execute(&spat->spat_compex, s, FALSE, 1));
+	} while ((m = execute(&spat->spat_compex, s, FALSE, 1)));
 	str_cat(dstr,s);
 	str_replace(str,dstr);
 	STABSET(str);
