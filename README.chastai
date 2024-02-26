@@ -66,8 +66,6 @@ plain text version is in perl.man.txt.
 
 To do
 -----
- - Make it run on Windows (with Cygwin?)
-
  - Test a2p (Awk to Perl converter) and s2p (Sed to Perl
    converter) in the x2p/ directory.
 
