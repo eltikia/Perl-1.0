@@ -57,6 +57,8 @@ char rcsid[] = "$Header: perly.c,v 1.0.1.11 88/03/10 16:42:59 root Exp $";
  * 
  */
 
+#include "perly.h"
+
 bool preprocess = FALSE;
 bool minus_n = FALSE;
 bool minus_p = FALSE;
@@ -2724,7 +2726,7 @@ register CMD *cmd;
 	    break;
 	case C_EXPR:
 	    if (cmd->ucmd.acmd.ac_stab)
-		arg_free(cmd->ucmd.acmd.ac_stab);
+		arg_free((ARG *)cmd->ucmd.acmd.ac_stab);
 	    if (cmd->ucmd.acmd.ac_expr)
 		arg_free(cmd->ucmd.acmd.ac_expr);
 	    break;
@@ -2737,6 +2739,7 @@ register CMD *cmd;
     }
 }
 
+void
 arg_free(arg)
 register ARG *arg;
 {
