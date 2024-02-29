@@ -291,8 +291,8 @@ STR ***retary;
 	    arg_free(spat->spat_runtime);	/* it won't change, so */
 	    spat->spat_runtime = Nullarg;	/* no point compiling again */
 	}
-	if (d = compile(&spat->spat_compex,m,TRUE,
-	  spat->spat_flags & SPAT_FOLD )) {
+	if ((d = compile(&spat->spat_compex,m,TRUE,
+	  spat->spat_flags & SPAT_FOLD ))) {
 	    fatal("/%s/: %s", m, d);
 	    return FALSE;
 	}
