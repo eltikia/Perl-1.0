@@ -251,7 +251,7 @@ register ARG *arg;
     }
 #endif
     while (*s) {
-	if (ch = tbl[*s & 0377]) {
+	if ((ch = tbl[*s & 0377])) {
 	    matches++;
 	    *s = ch;
 	}
