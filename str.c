@@ -125,6 +125,7 @@ register STR *str;
     return str->str_nval;
 }
 
+void
 str_sset(dstr,sstr)
 STR *dstr;
 register STR *sstr;
