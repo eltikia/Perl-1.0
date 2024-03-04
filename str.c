@@ -139,6 +139,7 @@ register STR *sstr;
 	str_nset(dstr,"",0);
 }
 
+void
 str_nset(str,ptr,len)
 register STR *str;
 register char *ptr;
