@@ -1732,7 +1732,7 @@ STR ***retary;		/* where to return an array to, null if nowhere */
     case O_OR:
 	if (str_true(sarg[1])) {
 	    if (assigning) {
-		str_set(str, (register char *)sarg[1]);
+		str_set(str, (char *)sarg[1]);
 		STABSET(str);
 	    }
 	    else
