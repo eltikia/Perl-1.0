@@ -2422,7 +2422,7 @@ freeargs:
 	    *retary = sarg;	/* up to them to free it */
 	}
 	else
-	    safefree(sarg);
+	    safefree((char *)sarg);
     }
     return str;
 
