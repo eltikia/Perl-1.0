@@ -154,6 +154,7 @@ register int len;
     str->str_pok = 1;		/* validate pointer */
 }
 
+void
 str_set(str,ptr)
 register STR *str;
 register char *ptr;
