@@ -278,6 +278,7 @@ LOC_SED " -e '/^[^#]/b' \
     exit(0);
 }
 
+void
 magicalize(list)
 register char *list;
 {
