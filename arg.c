@@ -273,7 +273,6 @@ STR ***retary;
     static ARRAY *myarray = Null(ARRAY*);
     int iters = 0;
     STR **sarg;
-    register char *e;
     int i;
 
     if (!spat || !s)
