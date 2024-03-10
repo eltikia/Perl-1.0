@@ -1526,7 +1526,7 @@ register ARG *pat;
 {
 
     register SPAT *spat;
-    register ARG *newarg;
+    register ARG *newarg = NULL;
 
     if ((pat->arg_type == O_MATCH ||
 	 pat->arg_type == O_SUBST ||
@@ -1560,7 +1560,7 @@ register ARG *pat;
 	    newarg[2].arg_type = pat[2].arg_type;
 	    newarg[2].arg_ptr = pat[2].arg_ptr;
 	    newarg[2].arg_flags = pat[2].arg_flags;
-	    if (pat->arg_len >= 3) {
+	    if (pat->arg_len >= 3 && newarg != NULL) {
 		newarg[3].arg_type = pat[3].arg_type;
 		newarg[3].arg_ptr = pat[3].arg_ptr;
 		newarg[3].arg_flags = pat[3].arg_flags;
