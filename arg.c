@@ -855,7 +855,6 @@ register FILE *fp;
     STR **tmpary;	/* must not be register */
     register STR **elem;
     register bool retval;
-    double value;
 
     if (!fp)
 	return FALSE;
