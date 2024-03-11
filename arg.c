@@ -911,7 +911,6 @@ bool
 do_exec(cmd)
 char *cmd;
 {
-    STR **tmpary;	/* must not be register */
     register char **a;
     register char *s;
     char **argv;
