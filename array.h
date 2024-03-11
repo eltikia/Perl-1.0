@@ -25,3 +25,5 @@ void aclear();
 bool apush();
 long alen();
 ARRAY *anew();
+void aunshift(register ARRAY *, register int);
+
