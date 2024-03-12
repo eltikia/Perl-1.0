@@ -59,6 +59,8 @@ char rcsid[] = "$Header: perly.c,v 1.0.1.11 88/03/10 16:42:59 root Exp $";
 
 #include "perly.h"
 
+void spat_free(register SPAT *);
+
 bool preprocess = FALSE;
 bool minus_n = FALSE;
 bool minus_p = FALSE;
@@ -2777,6 +2779,7 @@ register ARG *arg;
     free_arg(arg);
 }
 
+void
 spat_free(spat)
 register SPAT *spat;
 {
