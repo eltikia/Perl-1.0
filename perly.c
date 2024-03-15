@@ -2328,6 +2328,8 @@ register ARG *arg;
 
 ARG *
 addflags(i,flags,arg)
+register int i;
+register int flags;
 register ARG *arg;
 {
     arg[i].arg_flags |= flags;
