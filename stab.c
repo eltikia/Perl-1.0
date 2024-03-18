@@ -79,6 +79,7 @@ static char *sig_name[] = {
     };
 
 void sighandler(int);
+int whichsig(char *);
 
 STR *
 stab_str(stab)
@@ -337,6 +338,7 @@ STR *str;
     }
 }
 
+int
 whichsig(signame)
 char *signame;
 {
