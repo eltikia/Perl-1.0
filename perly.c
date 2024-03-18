@@ -100,7 +100,7 @@ register char **env;
 	case 'e':
 	    if (!e_fp) {
 	        e_tmpname = strcpy(safemalloc(sizeof(TMPPATH)),TMPPATH);
-		mktemp(e_tmpname);
+		mkstemp(e_tmpname);
 		e_fp = fopen(e_tmpname,"w");
 	    }
 	    if (argv[1])
