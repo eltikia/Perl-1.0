@@ -2499,7 +2499,6 @@ register CMD *cmd;
 {
     register CMD *tail;
     register ARG *arg = cmd->c_expr;
-    char *tmps;	/* used by True macro */
 
     /* hoist "while (<channel>)" up into command block */
 
