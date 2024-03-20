@@ -316,7 +316,7 @@ struct arg {
 	double	arg_nval;
     } arg_ptr;
     short	arg_len;
-    char	arg_type;
+    unsigned char arg_type;
     char	arg_flags;
 };
 
