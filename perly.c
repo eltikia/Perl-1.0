@@ -1728,7 +1728,7 @@ register char *s;
 		}
 	    }
 	  out:
-	    sprintf(tokenbuf,"%d",i);
+	    sprintf(tokenbuf,"%ld",i);
 	    arg[1].arg_ptr.arg_str = str_make(tokenbuf);
 	}
 	break;
