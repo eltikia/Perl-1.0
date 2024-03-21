@@ -1912,7 +1912,9 @@ int dolist;
     arg = op_new(newlen);
     arg->arg_type = type;
     doarg = opargs[type];
-    if (chld = arg1) {
+    chld = arg1;
+
+    if (chld) {
 	if (!(doarg & 1))
 	    arg[1].arg_flags |= AF_SPECIAL;
 	if (doarg & 16)
@@ -1943,7 +1945,10 @@ int dolist;
 	    }
 	}
     }
-    if (chld = arg2) {
+
+    chld = arg2;
+
+    if (chld) {
 	if (!(doarg & 2))
 	    arg[2].arg_flags |= AF_SPECIAL;
 	if (doarg & 32)
@@ -1967,7 +1972,10 @@ int dolist;
 		arg[2].arg_flags |= AF_SPECIAL;
 	}
     }
-    if (chld = arg3) {
+
+    chld = arg3;
+
+    if (chld) {
 	if (!(doarg & 4))
 	    arg[3].arg_flags |= AF_SPECIAL;
 	if (doarg & 64)
