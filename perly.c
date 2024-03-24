@@ -1524,6 +1524,7 @@ int fliporflop;
 
 ARG *
 mod_match(type,left,pat)
+int type;
 register ARG *left;
 register ARG *pat;
 {
