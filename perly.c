@@ -1638,6 +1638,7 @@ register CMD *cmd;
     return cmd;
 }
 
+void
 yyerror(s)
 char *s;
 {
