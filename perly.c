@@ -1838,7 +1838,6 @@ register char *s;
 		    s++;
 		    switch (*s) {
 		    default:
-		      defchar:
 			if (!leave || index(leave,*s))
 			    *d++ = '\\';
 			*d++ = *s++;
