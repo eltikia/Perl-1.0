@@ -1159,7 +1159,6 @@ register ARG *arg;
 {
     if (arg->arg_type != O_MATCH) {
 	register SPAT *spat = (SPAT *) safemalloc(sizeof (SPAT));
-	register char *d;
 
 	bzero((char *)spat, sizeof(SPAT));
 	spat->spat_next = spat_root;	/* link into spat list */
