@@ -1129,7 +1129,8 @@ register char *s;
 	if (spat->spat_first)
 	    spat->spat_flen = strlen(spat->spat_first->str_ptr);
     }	
-    if (d = compile(&spat->spat_compex,tokenbuf,TRUE,FALSE))
+    d = compile(&spat->spat_compex,tokenbuf,TRUE,FALSE);
+    if (d)
 	fatal(d);
 get_repl:
     s = scanstr(s);
