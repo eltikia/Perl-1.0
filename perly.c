@@ -1084,8 +1084,9 @@ register char *s;
 		spat->spat_flags |= SPAT_SCANALL;
 	}
     }	
-    if (d = compile(&spat->spat_compex,tokenbuf,TRUE,
-      spat->spat_flags & SPAT_FOLD ))
+    d = compile(&spat->spat_compex,tokenbuf,TRUE,
+      spat->spat_flags & SPAT_FOLD );
+    if (d)
 	fatal(d);
   got_pat:
     yylval.arg = make_match(O_MATCH,stab2arg(A_STAB,defstab),spat);
