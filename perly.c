@@ -901,8 +901,9 @@ register char *name;
 int add;
 {
     register STAB *stab;
+    unsigned long int name_index = (unsigned long int) *name;
 
-    for (stab = stab_index[*name]; stab; stab = stab->stab_next) {
+    for (stab = stab_index[name_index]; stab; stab = stab->stab_next) {
 	if (strEQ(name,stab->stab_name))
 	    return stab;
     }
@@ -914,8 +915,8 @@ int add;
 	bzero((char*)stab, sizeof(STAB));
 	stab->stab_name = savestr(name);
 	stab->stab_val = str_new(0);
-	stab->stab_next = stab_index[*name];
-	stab_index[*name] = stab;
+	stab->stab_next = stab_index[name_index];
+	stab_index[name_index] = stab;
 	return stab;
     }
     return Nullstab;
