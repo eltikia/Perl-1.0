@@ -313,6 +313,7 @@ unsigned int cmdline = 65535;
 #define FUN3(f) return(yylval.ival = f,expectterm = FALSE,bufptr = s,(int)FUNC3)
 #define SFUN(f) return(yylval.ival=f,expectterm = FALSE,bufptr = s,(int)STABFUN)
 
+YYINT
 yylex()
 {
     register char *s = bufptr;
