@@ -195,6 +195,7 @@ STAB *stab;
     return stab->stab_val;
 }
 
+void
 stabset(stab,str)
 register STAB *stab;
 STR *str;
