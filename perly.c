@@ -71,6 +71,7 @@ bool allstabs = FALSE;		/* init all customary symbols in symbol table?*/
 char *e_tmpname;
 FILE *e_fp = Nullfp;
 ARG *l();
+void magicalize(register char *);
 
 main(argc,argv,env)
 register int argc;
