@@ -220,13 +220,15 @@ LOC_SED " -e '/^[^#]/b' \
 	    str_numset(stabent(argv[0]+1,TRUE)->stab_val,(double)1.0);
 	}
     }
-    if (argvstab = stabent("ARGV",allstabs)) {
+    argvstab = stabent("ARGV",allstabs);
+    if (argvstab) {
 	aadd(argvstab);
 	for (; argc > 0; argc--,argv++) {
 	    apush(argvstab->stab_array,str_make(argv[0]));
 	}
     }
-    if (envstab = stabent("ENV",allstabs)) {
+    envstab = stabent("ENV",allstabs);
+    if (envstab) {
 	hadd(envstab);
 	for (; *env; env++) {
 	    if (!(s = index(*env,'=')))
@@ -238,14 +240,18 @@ LOC_SED " -e '/^[^#]/b' \
 	    *--s = '=';
 	}
     }
-    if (sigstab = stabent("SIG",allstabs))
+    sigstab = stabent("SIG",allstabs);
+    if (sigstab)
 	hadd(sigstab);
 
     magicalize("!#?^~=-%0123456789.+&*()<>,\\/[|");
 
-    if (tmpstab = stabent("0",allstabs))
+    tmpstab = stabent("0",allstabs);
+    if (tmpstab)
 	str_set(STAB_STR(tmpstab),origfilename);
-    if (tmpstab = stabent("$",allstabs))
+
+    tmpstab = stabent("$",allstabs);
+    if (tmpstab)
 	str_numset(STAB_STR(tmpstab),(double)getpid());
 
     tmpstab = stabent("stdin",TRUE);
