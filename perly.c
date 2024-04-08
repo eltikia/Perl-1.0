@@ -289,8 +289,9 @@ register char *list;
     char sym[2];
 
     sym[1] = '\0';
-    while (*sym = *list++) {
-	if (stab = stabent(sym,allstabs)) {
+    while ((*sym = *list++)) {
+	stab = stabent(sym,allstabs);
+	if (stab) {
 	    stab->stab_flags = SF_VMAGIC;
 	    stab->stab_val->str_link.str_magic = stab;
 	}
