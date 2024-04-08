@@ -1,0 +1,2 @@
+void version(void);
+
