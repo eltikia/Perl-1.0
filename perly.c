@@ -58,6 +58,7 @@ char rcsid[] = "$Header: perly.c,v 1.0.1.11 88/03/10 16:42:59 root Exp $";
  */
 
 #include "perly.h"
+#include "version.h"
 
 void spat_free(register SPAT *);
 void cmd_free(register CMD *);
