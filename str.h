@@ -41,4 +41,5 @@ void str_replace(register STR *, register STR *);
 void str_nset(register STR *, register char *, register int);
 void str_sset(STR *, register STR *);
 void str_set(register STR *, register char *);
+void str_numset(register STR *, double);
 
