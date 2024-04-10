@@ -1223,6 +1223,7 @@ STR ***retary;
     return retstr;
 }
 
+void
 init_eval()
 {
     register int i;
