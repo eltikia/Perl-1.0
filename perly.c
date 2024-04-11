@@ -74,6 +74,7 @@ FILE *e_fp = Nullfp;
 ARG *l();
 void magicalize(register char *);
 
+int
 main(argc,argv,env)
 register int argc;
 register char **argv;
@@ -287,6 +288,7 @@ LOC_SED " -e '/^[^#]/b' \
     if (goto_targ)
 	fatal("Can't find label \"%s\"--aborting",goto_targ);
     exit(0);
+    return 0;
 }
 
 void
