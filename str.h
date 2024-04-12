@@ -21,10 +21,6 @@ struct string {
 
 #define Nullstr Null(STR*)
 
-/* the following macro updates any magic values this str is associated with */
-
-#define STABSET(x) (x->str_link.str_magic && stabset(x->str_link.str_magic,x))
-
 EXT STR **tmps_list;
 EXT long tmps_max INIT(-1);
 
