@@ -36,8 +36,6 @@ static char nomem[] = "Out of memory!\n";
 
 /* paranoid version of malloc */
 
-static int an = 0;
-
 char *
 safemalloc(size)
 MEM_SIZE size;
