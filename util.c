@@ -236,7 +236,7 @@ char *pat,*a1,*a2,*a3,*a4;
 	if (last_in_stab &&
 	    last_in_stab->stab_io &&
 	    last_in_stab->stab_io->lines ) {
-	    sprintf(s,", <%s> line %d",
+	    sprintf(s,", <%s> line %ld",
 	      last_in_stab == argvstab ? "" : last_in_stab->stab_name,
 	      last_in_stab->stab_io->lines);
 	    s += strlen(s);
