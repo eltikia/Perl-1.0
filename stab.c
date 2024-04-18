@@ -78,6 +78,8 @@ static char *sig_name[] = {
     ,0
     };
 
+void sighandler(int);
+
 STR *
 stab_str(stab)
 STAB *stab;
@@ -202,7 +204,6 @@ STR *str;
 {
     char *s;
     int i;
-    int sighandler();
 
     if (stab->stab_flags & SF_VMAGIC) {
 	switch (stab->stab_name[0]) {
@@ -347,6 +348,7 @@ char *signame;
     return 0;
 }
 
+void
 sighandler(sig)
 int sig;
 {
