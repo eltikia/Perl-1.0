@@ -289,10 +289,10 @@ STR *str;
 	{
 	   int a = (int)str_gnum(str);
 #ifdef HAS_SETRGID
-            setrgid(uid);
+            setrgid(a);
 #else
 #ifdef HAS_SETREGID
-            setregid(uid, (Uid_t)-1);
+            setregid(a, (Uid_t)-1);
 #else
             fatal("setrgid() not implemented");
 #endif
