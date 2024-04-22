@@ -740,6 +740,7 @@ bool
 cclass(set, c, af)
 register char  *set;
 register int c;
+register int af;
 {
     c &= 0177;
 #if BITSPERBYTE == 8
