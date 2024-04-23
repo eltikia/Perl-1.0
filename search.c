@@ -510,7 +510,7 @@ int minend;
 	if (compex->do_folding) {
 	    c = compex->compbuf[1];	/* fast check for first character */
 	    do {
-		if (trt[*p1] == c && try(compex, p1, compex->compbuf))
+		if (trt[(int) *p1] == c && try(compex, p1, compex->compbuf))
 		    goto got_it;
 	    } while (*p1++ && !err);
 	}
@@ -587,9 +587,9 @@ register char *sp;
 		basesp = sp;
 		i = *cp++;
 		if (code & MAXINF)
-		    while (*sp && trt[*sp] == i) sp++;
+		    while (*sp && trt[(int) *sp] == i) sp++;
 		else
-		    if (*sp && trt[*sp] == i) sp++;
+		    if (*sp && trt[(int) *sp] == i) sp++;
 		backlen = 1;
 		goto backoff;
  
@@ -683,7 +683,7 @@ register char *sp;
 		goto right;
  
 	    case LPAR:
-		compex->subbeg[*cp++] = sp;
+		compex->subbeg[(int) *cp++] = sp;
 		continue;
  
 	    case RPAR:
