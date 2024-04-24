@@ -15,6 +15,8 @@
 #include "EXTERN.h"
 #include "perl.h"
 
+void hsplit(HASH *);
+
 STR *
 hfetch(tb,key)
 register HASH *tb;
@@ -128,6 +130,7 @@ char *key;
     return FALSE;
 }
 
+void
 hsplit(tb)
 HASH *tb;
 {
