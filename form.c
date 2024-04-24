@@ -33,7 +33,7 @@ register FCMD *fcmd;
     char tmpchar;
     char *t;
     CMD mycmd;
-    STR *str;
+    STR *str = Nullstr;
     char *chophere;
 
     mycmd.c_type = C_NULL;
