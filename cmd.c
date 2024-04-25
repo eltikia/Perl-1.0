@@ -471,6 +471,7 @@ char *pat;
 }
 #endif
 
+int
 copyopt(cmd,which)
 register CMD *cmd;
 register CMD *which;
