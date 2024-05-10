@@ -26,6 +26,7 @@
  * 
  */
 
+#include <stdarg.h>
 #include "EXTERN.h"
 #include "perl.h"
 
@@ -218,15 +219,17 @@ int newlen;
 }
 
 /*VARARGS1*/
-fatal(pat,a1,a2,a3,a4)
-char *pat,*a1,*a2,*a3,*a4;
+void fatal(char *pat, ...)
 {
     extern FILE *e_fp;
     extern char *e_tmpname;
     char *s;
+    va_list argptr;
 
+    va_start(argptr, pat);
     s = tokenbuf;
-    sprintf(s,pat,a1,a2,a3,a4);
+    vsprintf(s,pat,argptr);
+    va_end(argptr);
     s += strlen(s);
     if (s[-1] != '\n') {
 	if (line) {
