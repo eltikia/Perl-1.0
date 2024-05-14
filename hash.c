@@ -202,7 +202,7 @@ register HASH *tb;
     if (!tb)
 	return;
     hiterinit(tb);
-    while (hent = hiternext(tb)) {	/* concise but not very efficient */
+    while ((hent = hiternext(tb)) != NULL) {	/* concise but not very efficient */
 	hentfree(ohent);
 	ohent = hent;
     }
@@ -219,7 +219,7 @@ HASH *tb;
     if (!tb)
 	return
     hiterinit(tb);
-    while (hent = hiternext(tb)) {
+    while ((hent = hiternext(tb)) != NULL) {
 	hentfree(ohent);
 	ohent = hent;
     }
