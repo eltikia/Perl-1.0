@@ -220,6 +220,7 @@ register FCMD *fcmd;
     *d++ = '\0';
 }
 
+int
 countlines(s)
 register char *s;
 {
@@ -232,6 +233,7 @@ register char *s;
     return count;
 }
 
+void
 do_write(orec,stio)
 struct outrec *orec;
 register STIO *stio;
