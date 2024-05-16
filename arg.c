@@ -1098,7 +1098,7 @@ register ARG *arg;
     STR **tmpary;	/* must not be register */
     register ARG *larg = arg[1].arg_ptr.arg_arg;
     register STR **elem;
-    register STR *str;
+    register STR *str = Null(STR *);
     register ARRAY *ary;
     register int i;
     register int lasti;
