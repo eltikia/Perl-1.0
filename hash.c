@@ -240,6 +240,7 @@ register HASH *tb;
 }
 #endif
 
+int
 hiterinit(tb)
 register HASH *tb;
 {
