@@ -1316,7 +1316,7 @@ CMD *
 make_ccmd(type,arg,cblock)
 int type;
 register ARG *arg;
-struct compcmd cblock;
+compcmd cblock;
 {
     register CMD *cmd = (CMD *) safemalloc(sizeof (CMD));
 
