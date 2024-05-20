@@ -115,15 +115,15 @@ struct cmd {
 EXT CMD *main_root INIT(Nullcmd);
 EXT CMD *eval_root INIT(Nullcmd);
 
-EXT struct compcmd {
+typedef struct {
     CMD *comp_true;
     CMD *comp_alt;
-};
+} compcmd;
 
 #ifndef DOINIT
-extern struct compcmd Nullccmd;
+extern compcmd Nullccmd;
 #else
-struct compcmd Nullccmd = {Nullcmd, Nullcmd};
+compcmd Nullccmd = {Nullcmd, Nullcmd};
 #endif
 void opt_arg();
 void evalstatic();
