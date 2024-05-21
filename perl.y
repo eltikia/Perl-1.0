@@ -59,7 +59,7 @@ char *tokename[] = {
     char *cval;
     ARG *arg;
     CMD *cmdval;
-    struct compcmd compval;
+    compcmd compval;
     STAB *stabval;
     FCMD *formval;
 }
