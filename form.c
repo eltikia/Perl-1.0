@@ -32,11 +32,9 @@ register FCMD *fcmd;
     register int size;
     char tmpchar;
     char *t;
-    CMD mycmd;
     STR *str = Nullstr;
     char *chophere;
 
-    mycmd.c_type = C_NULL;
     orec->o_lines = 0;
     for (; fcmd; fcmd = fcmd->f_next) {
 	CHKLEN(fcmd->f_presize);
