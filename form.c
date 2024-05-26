@@ -24,6 +24,7 @@ if (d - orec->o_str + (allow) >= curlen) { \
 
 int countlines(register char *);
 
+void
 format(orec,fcmd)
 register struct outrec *orec;
 register FCMD *fcmd;
