@@ -40,7 +40,7 @@ CMD *cmd;
 register CMD *cmd;
 #endif
 {
-    SPAT *oldspat;
+    SPAT *oldspat = Null(SPAT *);
 #ifdef DEBUGGING
     int olddlevel;
     int entdlevel;
