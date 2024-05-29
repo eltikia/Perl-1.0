@@ -27,6 +27,8 @@
 
 static STR str_choped;
 
+int copyopt(register CMD *, register CMD *);
+
 /* This is the main command loop.  We try to spend as much time in this loop
  * as possible, so lots of optimizations do their activities in here.  This
  * means things get a little sloppy.
