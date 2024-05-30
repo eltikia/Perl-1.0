@@ -83,6 +83,7 @@
 #include "perly.h"
 
 #include <signal.h>
+#include <sys/wait.h>
 
 ARG *debarg;
 
@@ -622,6 +623,7 @@ int whence;
     return fseek(stio->fp, pos, whence) >= 0;
 }
 
+int
 do_stat(arg,sarg,retary)
 register ARG *arg;
 register STR **sarg;
@@ -678,6 +680,7 @@ STR ***retary;
     return max;
 }
 
+int
 do_tms(retary)
 STR ***retary;
 {
@@ -714,6 +717,7 @@ STR ***retary;
     return max;
 }
 
+int
 do_time(tmbuf,retary)
 struct tm *tmbuf;
 STR ***retary;
@@ -960,6 +964,7 @@ register ARRAY *ary;
     return str;
 }
 
+void
 do_unshift(arg,ary)
 register ARG *arg;
 register ARRAY *ary;
@@ -983,6 +988,7 @@ register ARRAY *ary;
     safefree((char*)tmpary);
 }
 
+int
 apply(type,arg,sarg)
 int type;
 register ARG *arg;
@@ -1070,7 +1076,7 @@ STR **sarg;
 STR *
 do_subr(arg,sarg)
 register ARG *arg;
-register char **sarg;
+register STR **sarg;
 {
     ARRAY *savearray;
     STR *str;
@@ -1168,7 +1174,7 @@ STR ***retary;
     ary->ary_fill = -1;
 
     hiterinit(hash);
-    while (entry = hiternext(hash)) {
+    while ((entry = hiternext(hash)) != NULL) {
 	max++;
 	if (kv == O_KEYS)
 	    apush(ary,str_make(hiterkey(entry)));
@@ -1226,8 +1232,6 @@ STR ***retary;
 void
 init_eval()
 {
-    register int i;
-
 #define A(e1,e2,e3) (e1+(e2<<1)+(e3<<2))
     opargs[O_ITEM] =		A(1,0,0);
     opargs[O_ITEM2] =		A(0,0,0);
@@ -2165,7 +2169,8 @@ STR ***retary;		/* where to return an array to, null if nowhere */
 	value = (double)fork();
 	goto donumset;
     case O_SYSTEM:
-	if (anum = vfork()) {
+	anum = vfork();
+	if (anum) {
 	    ihand = signal(SIGINT, SIG_IGN);
 	    qhand = signal(SIGQUIT, SIG_IGN);
 	    while ((maxarg = wait(&argflags)) != anum && maxarg != -1)
@@ -2424,7 +2429,6 @@ freeargs:
     }
     return str;
 
-nullarray:
     maxarg = 0;
 #ifdef DEBUGGING
     dlevel--;
